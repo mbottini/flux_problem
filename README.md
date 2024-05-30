@@ -18,6 +18,12 @@ rustup default stable
 Currently, this is a library and does not build an executable. Later on, an
 executable will use this library to run a simulation with provided parameters.
 
+# Running Unit Tests
+
+```bash
+cargo test
+```
+
 # Generating Documentation
 
 ```bash
