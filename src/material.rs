@@ -3,7 +3,7 @@
 /// me, I just work here.
 #[derive(Debug)]
 pub struct Material {
-    diffusion_coefficient: f64,
-    sigma_a: f64,
-    sigma_f: f64,
+    pub diffusion_coefficient: f64,
+    pub sigma_a: f64,
+    pub sigma_f: f64,
 }
