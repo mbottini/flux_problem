@@ -7,7 +7,7 @@ use crate::piece_materials::PieceMaterials;
 /// l_x: x-direction total distance
 /// l_y: y-direction total distance
 /// materials: Material coefficients of each part of the piece
-struct Geometry {
+pub struct Geometry {
     a: f64,
     b: f64,
     l_x: f64,
