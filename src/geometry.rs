@@ -1,12 +1,12 @@
+use crate::material::Material;
+use crate::piece_materials::PieceMaterials;
+
 /// Geometry of the piece being simulated.
 /// a: x-direction distance where core becomes reflector
 /// b: y-direction distance where cores transition
 /// l_x: x-direction total distance
 /// l_y: y-direction total distance
 /// materials: Material coefficients of each part of the piece
-use crate::material::Material;
-use crate::piece_materials::PieceMaterials;
-
 struct Geometry {
     a: f64,
     b: f64,
