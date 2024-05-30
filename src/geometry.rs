@@ -30,40 +30,45 @@ impl Geometry {
 }
 
 mod test {
+    #[cfg(test)]
     use super::*;
 
-    const reflector_mat: Material = Material {
+    #[cfg(test)]
+    const REFLECTOR_MAT: Material = Material {
         diffusion_coefficient: 0.65,
         sigma_a: 0.12,
         sigma_f: 0.185,
     };
-    const regular_mat: Material = Material {
+    #[cfg(test)]
+    const REGULAR_MAT: Material = Material {
         diffusion_coefficient: 0.12,
         sigma_a: 0.10,
         sigma_f: 0.01,
     };
-    const core_mat: Material = Material {
+    #[cfg(test)]
+    const CORE_MAT: Material = Material {
         diffusion_coefficient: 0.185,
         sigma_a: 0.15,
         sigma_f: 0.0,
     };
 
-    const test_geometry: Geometry = Geometry {
+    #[cfg(test)]
+    const TEST_GEOMETRY: Geometry = Geometry {
         a: 50.0,
         b: 60.0,
         l_x: 100.0,
         l_y: 100.0,
         materials: PieceMaterials {
-            reflector: reflector_mat,
-            core: core_mat,
-            regular: regular_mat,
+            reflector: REFLECTOR_MAT,
+            core: CORE_MAT,
+            regular: REGULAR_MAT,
         },
     };
 
     #[test]
     fn test_get_material() {
-        assert_eq!(test_geometry.get_material(0.0, 0.0), &regular_mat);
-        assert_eq!(test_geometry.get_material(51.0, 0.0), &reflector_mat);
-        assert_eq!(test_geometry.get_material(0.0, 61.0), &core_mat);
+        assert_eq!(TEST_GEOMETRY.get_material(0.0, 0.0), &REGULAR_MAT);
+        assert_eq!(TEST_GEOMETRY.get_material(51.0, 0.0), &REFLECTOR_MAT);
+        assert_eq!(TEST_GEOMETRY.get_material(0.0, 61.0), &CORE_MAT);
     }
 }
