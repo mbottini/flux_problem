@@ -5,6 +5,6 @@ use crate::material::Material;
 #[derive(Debug, PartialEq)]
 pub struct PieceMaterials {
     pub core: Material,
+    pub core2: Material,
     pub reflector: Material,
-    pub regular: Material,
 }

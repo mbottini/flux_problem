@@ -24,7 +24,7 @@ impl Geometry {
         } else if y > self.b {
             &self.materials.core
         } else {
-            &self.materials.regular
+            &self.materials.core2
         }
     }
 }
@@ -40,7 +40,7 @@ mod test {
         sigma_f: 0.185,
     };
     #[cfg(test)]
-    const REGULAR_MAT: Material = Material {
+    const CORE2_MAT: Material = Material {
         diffusion_coefficient: 0.12,
         sigma_a: 0.10,
         sigma_f: 0.01,
@@ -61,13 +61,13 @@ mod test {
         materials: PieceMaterials {
             reflector: REFLECTOR_MAT,
             core: CORE_MAT,
-            regular: REGULAR_MAT,
+            core2: CORE2_MAT,
         },
     };
 
     #[test]
     fn test_get_material() {
-        assert_eq!(TEST_GEOMETRY.get_material(0.0, 0.0), &REGULAR_MAT);
+        assert_eq!(TEST_GEOMETRY.get_material(0.0, 0.0), &CORE2_MAT);
         assert_eq!(TEST_GEOMETRY.get_material(51.0, 0.0), &REFLECTOR_MAT);
         assert_eq!(TEST_GEOMETRY.get_material(0.0, 61.0), &CORE_MAT);
     }
