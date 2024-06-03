@@ -39,7 +39,7 @@ impl<const X_RES: usize, const Y_RES: usize> std::fmt::Display for PhiState<X_RE
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "Geometry: {:?}\n", self.geometry)?;
         for arr in self.phi {
-            write!(f, "{arr:?}")?;
+            writeln!(f, "{arr:?}")?;
         }
         Ok(())
     }
