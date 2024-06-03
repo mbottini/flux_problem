@@ -9,7 +9,7 @@ fn main() {
         sigma_a: 0.12,
         sigma_f: 0.185,
     };
-    const REGULAR_MAT: Material = Material {
+    const CORE2_MAT: Material = Material {
         diffusion_coefficient: 0.12,
         sigma_a: 0.10,
         sigma_f: 0.01,
@@ -27,7 +27,7 @@ fn main() {
         materials: PieceMaterials {
             reflector: REFLECTOR_MAT,
             core: CORE_MAT,
-            regular: REGULAR_MAT,
+            core2: CORE2_MAT,
         },
     };
 
